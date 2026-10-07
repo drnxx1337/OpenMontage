@@ -208,6 +208,12 @@ interface Cut {
   rightLabel?: string;
   leftValue?: string;
   rightValue?: string;
+  leftColor?: string;
+  rightColor?: string;
+  leftImage?: string;
+  rightImage?: string;
+  changeIndicator?: string;
+  changeDirection?: "up" | "down" | "neutral";
   // Chart props
   chartData?: any[];
   chartSeries?: any[];
@@ -615,6 +621,12 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
       <ComparisonCard
         leftLabel={cut.leftLabel} rightLabel={cut.rightLabel}
         leftValue={cut.leftValue} rightValue={cut.rightValue}
+        leftColor={cut.leftColor || cut.chartColors?.[0] || theme.chartColors[0]}
+        rightColor={cut.rightColor || cut.chartColors?.[1] || theme.chartColors[1]}
+        leftImage={cut.leftImage}
+        rightImage={cut.rightImage}
+        changeIndicator={cut.changeIndicator}
+        changeDirection={cut.changeDirection || "neutral"}
         title={cut.title} backgroundColor={bgColor} textColor={textColor}
         cardBackgroundColor={cut.cardBackgroundColor || theme.surfaceColor}
       />

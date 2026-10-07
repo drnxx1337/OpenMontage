@@ -1,10 +1,12 @@
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   spring,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { resolveAsset } from "../lib/resolveAsset";
 
 type ChangeDirection = "up" | "down" | "neutral";
 
@@ -15,6 +17,8 @@ interface ComparisonCardProps {
   rightValue: string;
   leftColor?: string;
   rightColor?: string;
+  leftImage?: string;
+  rightImage?: string;
   title?: string;
   changeIndicator?: string;
   changeDirection?: ChangeDirection;
@@ -34,6 +38,8 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
   rightValue,
   leftColor = "#2563EB",
   rightColor = "#10B981",
+  leftImage,
+  rightImage,
   title,
   changeIndicator,
   changeDirection = "neutral",
@@ -144,9 +150,9 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: "80%",
-          maxWidth: 1540,
-          gap: 32,
+          width: "86%",
+          maxWidth: 1640,
+          gap: 36,
         }}
       >
         {/* Title */}
@@ -177,7 +183,7 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
             backgroundColor: cardBackgroundColor,
             overflow: "hidden",
             boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            minHeight: 280,
+            minHeight: 680,
           }}
         >
           {/* Left side */}
@@ -188,12 +194,25 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "48px 32px",
+              padding: "56px 40px",
               opacity: leftOpacity,
               transform: `translateX(${leftSlide}px) scale(${leftScale})`,
               gap: 16,
             }}
           >
+            {/* Left icon */}
+            {leftImage && (
+              <Img
+                src={resolveAsset(leftImage)}
+                style={{
+                  width: 240,
+                  height: 240,
+                  objectFit: "contain",
+                  opacity: leftOpacity,
+                  transform: `scale(${leftScale})`,
+                }}
+              />
+            )}
             {/* Left color accent bar */}
             <div
               style={{
@@ -261,11 +280,12 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: 4,
+                  gap: 8,
                   opacity: indicatorOpacity,
                   transform: `scale(${indicatorScale})`,
                 }}
               >
+                {changeDirection !== "neutral" && (
                 <div
                   style={{
                     width: 48,
@@ -289,13 +309,21 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
                     {directionArrow}
                   </span>
                 </div>
+                )}
                 <div
                   style={{
                     fontFamily,
-                    fontWeight: 700,
-                    fontSize: 18,
-                    color: directionColor,
+                    fontWeight: 800,
+                    fontSize: changeDirection === "neutral" ? 36 : 24,
+                    color: "#0B1026",
+                    backgroundColor:
+                      changeDirection === "neutral"
+                        ? "#E8B84B"
+                        : directionColor,
+                    padding: "10px 26px",
+                    borderRadius: 26,
                     whiteSpace: "nowrap" as const,
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.35)",
                   }}
                 >
                   {changeIndicator}
@@ -312,12 +340,25 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "48px 32px",
+              padding: "56px 40px",
               opacity: rightOpacity,
               transform: `translateX(${rightSlide}px) scale(${rightScale})`,
               gap: 16,
             }}
           >
+            {/* Right icon */}
+            {rightImage && (
+              <Img
+                src={resolveAsset(rightImage)}
+                style={{
+                  width: 240,
+                  height: 240,
+                  objectFit: "contain",
+                  opacity: rightOpacity,
+                  transform: `scale(${rightScale})`,
+                }}
+              />
+            )}
             {/* Right color accent bar */}
             <div
               style={{
