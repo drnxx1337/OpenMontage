@@ -43,7 +43,13 @@ export const BarChart: React.FC<BarChartProps> = ({
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
 
-  const maxValue = Math.max(...data.map((d) => d.value), 1);
+  const safeData = (data || []).map((d) => ({
+    label: String(d.label ?? ""),
+    value: parseNumeric(d.value),
+    displayValue: typeof d.value === "string" ? d.value : undefined,
+  }));
+
+  const maxValue = Math.max(...safeData.map((d) => d.value), 1);
 
   // Chart layout constants (within 1920x1080 canvas)
   const chartLeft = 140;
@@ -53,7 +59,7 @@ export const BarChart: React.FC<BarChartProps> = ({
   const chartWidth = chartRight - chartLeft;
   const chartHeight = chartBottom - chartTop;
 
-  const barCount = data.length;
+  const barCount = safeData.length;
   const totalGap = barGap * (barCount + 1);
   const barWidth = Math.min(
     (chartWidth - totalGap) / barCount,
@@ -160,7 +166,7 @@ export const BarChart: React.FC<BarChartProps> = ({
         />
 
         {/* Bars */}
-        {data.map((datum, i) => {
+        {safeData.map((datum, i) => {
           const color = colors[i % colors.length];
           const barX = offsetX + barGap + i * (barWidth + barGap);
           const barHeightFull = (datum.value / maxValue) * chartHeight;
@@ -251,7 +257,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                     { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
                   )}
                 >
-                  {formatNumber(datum.value)}
+                  {formatNumber(datum.displayValue ?? datum.value)}
                 </text>
               )}
 
@@ -276,9 +282,28 @@ export const BarChart: React.FC<BarChartProps> = ({
   );
 };
 
-function formatNumber(n: number): string {
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  if (Number.isInteger(n)) return String(n);
-  return n.toFixed(1);
+function parseNumeric(val: unknown): number {
+  if (typeof val === "number") return isNaN(val) ? 0 : val;
+  if (!val) return 0;
+  if (typeof val === "string") {
+    const cleaned = val.replace(/,/g, "").match(/-?\d+(\.\d+)?/);
+    if (cleaned) {
+      const num = parseFloat(cleaned[0]);
+      return isNaN(num) ? 0 : num;
+    }
+  }
+  return 0;
+}
+
+function formatNumber(n: unknown): string {
+  if (n === null || n === undefined) return "";
+  if (typeof n === "string" && isNaN(Number(n.replace(/,/g, "")))) {
+    return n;
+  }
+  const num = typeof n === "number" ? n : parseFloat(String(n).replace(/,/g, "")) || 0;
+  if (isNaN(num)) return String(n ?? 0);
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${(num / 1_000).toFixed(1)}K`;
+  if (Number.isInteger(num)) return String(num);
+  return num.toFixed(1);
 }

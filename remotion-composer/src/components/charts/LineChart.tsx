@@ -379,9 +379,15 @@ export const LineChart: React.FC<LineChartProps> = ({
   );
 };
 
-function formatNumber(n: number): string {
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  if (Number.isInteger(n)) return String(n);
-  return n.toFixed(1);
+function formatNumber(n: unknown): string {
+  if (n === null || n === undefined) return "";
+  if (typeof n === "string" && isNaN(Number(n.replace(/,/g, "")))) {
+    return n;
+  }
+  const num = typeof n === "number" ? n : parseFloat(String(n).replace(/,/g, "")) || 0;
+  if (isNaN(num)) return String(n ?? 0);
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${(num / 1_000).toFixed(1)}K`;
+  if (Number.isInteger(num)) return String(num);
+  return num.toFixed(1);
 }
