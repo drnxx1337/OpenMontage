@@ -30,7 +30,10 @@ import type { TerminalStep } from "./components/TerminalScene";
 import { ScreenshotScene } from "./components/ScreenshotScene";
 import type { ScreenshotStep } from "./components/ScreenshotScene";
 import { ProviderChip } from "./components/ProviderChip";
+import { ProcessFlow, RadialGauge, GeoMapScene } from "./components/science";
+import type { ProcessStep, VisualModelConfig } from "./components/science";
 import { resolveAsset } from "./lib/resolveAsset";
+
 import type { ParticleType } from "./components/ParticleOverlay";
 import { resolveTheme, type ThemeConfig, DEFAULT_THEME } from "./Root";
 
@@ -274,7 +277,27 @@ interface Cut {
   screenshotSteps?: ScreenshotStep[];
   screenshotSize?: { width: number; height: number };
   cursorStartAt?: [number, number];
+  // Easy Science props (type: "process_flow" | "radial_gauge")
+  processSteps?: ProcessStep[];
+  activeStepIndex?: number;
+  gaugeValue?: number;
+  gaugeMin?: number;
+  gaugeMax?: number;
+  gaugeUnit?: string;
+  // Cognitive visual models (simulation & visual archetypes)
+  visualModel?: { left?: VisualModelConfig; right?: VisualModelConfig };
+  leftVisual?: VisualModelConfig;
+  rightVisual?: VisualModelConfig;
+  // Habitat / Geo Map props (type: "habitat_map" | "geo_map")
+  region?: string;
+  biome?: string;
+  coordinates?: [number, number];
+  zoom?: number;
+  species?: string;
+  timeline?: any[];
+  rangePoints?: any[];
 }
+
 
 interface Overlay {
   type: "section_title" | "stat_reveal" | "hero_title" | "provider_chip";
@@ -625,6 +648,9 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         rightColor={cut.rightColor || cut.chartColors?.[1] || theme.chartColors[1]}
         leftImage={cut.leftImage}
         rightImage={cut.rightImage}
+        leftVisual={cut.leftVisual}
+        rightVisual={cut.rightVisual}
+        visualModel={cut.visualModel}
         changeIndicator={cut.changeIndicator}
         changeDirection={cut.changeDirection || "neutral"}
         title={cut.title} backgroundColor={bgColor} textColor={textColor}
@@ -737,8 +763,71 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
     );
   }
 
+  // --- Easy Science: Process Flow ---
+  if (cut.type === "process_flow" && (cut.processSteps || cut.steps)) {
+    const pSteps = (cut.processSteps || cut.steps) as ProcessStep[];
+    return maybeWrapWithBg(
+      <ProcessFlow
+        title={cut.title}
+        subtitle={cut.subtitle}
+        steps={pSteps}
+        activeStepIndex={cut.activeStepIndex}
+        accentColor={accent}
+        textColor={textColor}
+        backgroundColor={bgColor}
+        cardBackgroundColor={cut.cardBackgroundColor || theme.surfaceColor}
+      />
+    );
+  }
+
+  // --- Easy Science: Radial Gauge ---
+  if (
+    cut.type === "radial_gauge" &&
+    (cut.gaugeValue !== undefined || cut.stat !== undefined || cut.progress !== undefined)
+  ) {
+    const rawVal =
+      cut.gaugeValue ??
+      (typeof cut.stat === "number"
+        ? cut.stat
+        : parseFloat(String(cut.stat || cut.progress || 50)) || 50);
+    return maybeWrapWithBg(
+      <RadialGauge
+        title={cut.title}
+        subtitle={cut.subtitle}
+        value={rawVal}
+        min={cut.gaugeMin ?? 0}
+        max={cut.gaugeMax ?? 100}
+        unit={cut.gaugeUnit || ""}
+        accentColor={accent}
+        textColor={textColor}
+        backgroundColor={bgColor}
+        cardBackgroundColor={cut.cardBackgroundColor || theme.surfaceColor}
+      />
+    );
+  }
+
+  // --- Habitat / Geo Map Scene ---
+  if (cut.type === "habitat_map" || cut.type === "geo_map") {
+    return maybeWrapWithBg(
+      <GeoMapScene
+        title={cut.title}
+        region={cut.region}
+        biome={cut.biome}
+        coordinates={cut.coordinates}
+        zoom={cut.zoom}
+        species={cut.species}
+        timeline={cut.timeline}
+        rangePoints={cut.rangePoints}
+        accentColor={accent}
+        textColor={textColor}
+        backgroundColor={bgColor}
+      />
+    );
+  }
+
   // --- Anime scene (multi-image crossfade + particles) ---
   if (cut.type === "anime_scene" && cut.images && cut.images.length > 0) {
+
     return (
       <AnimeScene
         images={cut.images}
