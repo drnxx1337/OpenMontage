@@ -360,6 +360,32 @@ export const GeoMapScene: React.FC<GeoMapSceneProps> = ({
           </div>
         </div>
 
+        {/* Range Points Badges */}
+        {rangePoints && rangePoints.length > 0 && (
+          <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {rangePoints.map((pt: any, idx: number) => {
+              const label = pt.label || pt.name || pt.region;
+              if (!label) return null;
+              return (
+                <div
+                  key={idx}
+                  style={{
+                    fontSize: 12,
+                    padding: "4px 10px",
+                    borderRadius: 6,
+                    background: pt.highlight ? "rgba(56, 189, 248, 0.18)" : "rgba(255, 255, 255, 0.05)",
+                    border: `1px solid ${pt.highlight ? accentColor : "rgba(255, 255, 255, 0.1)"}`,
+                    color: pt.highlight ? accentColor : "#E2E8F0",
+                  }}
+                >
+                  <span style={{ fontWeight: pt.highlight ? 700 : 500 }}>{label}</span>
+                  {pt.detail ? <span style={{ opacity: 0.75 }}> · {pt.detail}</span> : null}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         {/* Timeline badge if timeline data exists */}
         {timeline && timeline.length > 0 && (
           <div
