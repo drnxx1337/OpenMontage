@@ -1,0 +1,112 @@
+{
+  "theme": "deep-space",
+  "themeConfig": {
+    "accentColor": "#38BDF8",
+    "backgroundColor": "#030712",
+    "primaryColor": "#6366F1",
+    "surfaceColor": "#0F172A",
+    "textColor": "#F8FAFC",
+    "mutedTextColor": "#94A3B8",
+    "chartColors": ["#38BDF8", "#34D399", "#F59E0B", "#EF4444"]
+  },
+  "cuts": [
+    {
+      "id": "TEST-KINETIC-01",
+      "source": "",
+      "in_seconds": 0.0,
+      "out_seconds": 3.0,
+      "type": "kinetic_scene",
+      "kineticSpec": {
+        "title": "Magnetosfera Ziemi i Łuk Uderzeniowy",
+        "subtitle": "Geodynamo jądrowe i ugięcie wiatru słonecznego",
+        "environment": {
+          "backgroundStyle": "space",
+          "starfield": true,
+          "grid": {
+            "enabled": true,
+            "type": "polar",
+            "opacity": 0.12
+          }
+        },
+        "bodies": [
+          {
+            "id": "earth",
+            "name": "Ziemia",
+            "position": { "x": 0, "y": 0 },
+            "radius": 110,
+            "primaryColor": "#2563EB",
+            "accentColor": "#38BDF8",
+            "atmosphereColor": "#60A5FA",
+            "atmosphereGlow": true,
+            "tiltDeg": 23.5,
+            "rotationSpeed": 1.0,
+            "cutaway": {
+              "enabled": true,
+              "angleDeg": 90,
+              "dynamoEffect": true,
+              "layers": [
+                { "name": "Skorupa", "depthRatio": 1.0, "color": "#1E3A8A" },
+                { "name": "Płaszcz", "depthRatio": 0.85, "color": "#B45309" },
+                { "name": "Ciekłe Jądro", "depthRatio": 0.55, "color": "#EA580C" },
+                { "name": "Stałe Jądro", "depthRatio": 0.25, "color": "#FBBF24" }
+              ]
+            }
+          }
+        ],
+        "fields": {
+          "type": "solar_wind_interaction",
+          "dipole": {
+            "enabled": true,
+            "poleTiltDeg": 11.5,
+            "loopsCount": 8,
+            "intensity": 1.4,
+            "color": "#38BDF8",
+            "pulsing": true
+          },
+          "solarWind": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "particleCount": 35,
+            "speed": 1.2,
+            "bowShockRadius": 250,
+            "color": "#F59E0B"
+          }
+        },
+        "callouts": [
+          {
+            "id": "c1",
+            "target": "earth",
+            "title": "Geodynamo",
+            "value": "3.8",
+            "unit": "Gauss",
+            "subtext": "Konwekcja w ciekłym żelazie",
+            "offset": { "x": 160, "y": -120 }
+          },
+          {
+            "id": "c2",
+            "target": { "x": -250, "y": 0 },
+            "title": "Łuk Uderzeniowy",
+            "value": "450",
+            "unit": "km/s",
+            "subtext": "Hamowanie wiatru słonecznego",
+            "offset": { "x": -180, "y": -140 }
+          }
+        ],
+        "scaleRuler": {
+          "enabled": true,
+          "label": "12 742 km (1 R_E)",
+          "pixelLength": 220,
+          "position": "bottom-right"
+        }
+      }
+    }
+  ],
+  "overlays": [],
+  "captions": [],
+  "audio": {},
+  "meta": {
+    "project_id": "test_kinetic",
+    "shot_id": "TEST-KINETIC-01",
+    "duration_sec": 3.0
+  }
+}

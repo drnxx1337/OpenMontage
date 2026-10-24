@@ -25,6 +25,10 @@ When you add a new component, append it here and in `src/components/index.ts`.
 | `anime_scene` | `AnimeScene` | `images` (list) | `particles`, `lightingFrom`, `lightingTo`, `vignette` | Still-image anime scene with particles + camera motion |
 | **`terminal_scene`** | **`TerminalScene`** | **`steps`** (list of cmd/out/pause/pill) | **`terminalTitle`, `prompt`, `accentColor`** | **Synthetic terminal animation — NO real capture needed. See [`.agents/skills/synthetic-screen-recording/SKILL.md`](../.agents/skills/synthetic-screen-recording/SKILL.md)** |
 | **`screenshot_scene`** | **`ScreenshotScene`** | **`backgroundImage`** (path in `public/`), **`screenshotSteps`** (list of overlays) | **`screenshotSize` (natural px w/h), `cursorStartAt`, `accentColor`** | **Approach-1 synthetic UI — drop any screenshot, animate scripted overlays on top (cursor, click_pulse, type_into, bubble_append, typing_dots, highlight_box, callout_balloon). Viewer-indistinguishable from a real recording for 15–30s focused demos. Coordinates are normalized (0–1) against the contain-fit rect. See [`.agents/skills/synthetic-ui-recording/SKILL.md`](../.agents/skills/synthetic-ui-recording/SKILL.md) (planned).** |
+| **`process_flow`** | **`ProcessFlow`** | **`steps`** (list of label/detail/value/highlight) | **`title`, `subtitle`, `activeStepIndex`, `accentColor`** | **Easy Science: sequential step-by-step schematic with animated connectors & cards.** |
+| **`radial_gauge`** | **`RadialGauge`** | **`value`** (number) | **`title`, `subtitle`, `min`, `max`, `unit`, `accentColor`** | **Easy Science: physical dial/speedometer gauge with spring needle & digital counter.** |
+| **`kinetic_scene`** | **`ProceduralKineticScene`** | **`kineticSpec`** (`KineticSceneSpec`) | **`title`, `subtitle`, `accentColor`, `backgroundColor`** | **Agentic Kinetic Remotion Engine: procedural scientific scene graph (planetary bodies, cutaways, magnetic dipole loops, solar wind bow shock, telemetry HUD). 60 FPS.** |
+
 
 ---
 

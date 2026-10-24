@@ -3,3 +3,4 @@ export * from "./RadialGauge";
 export * from "./CelestialModel";
 export * from "./CognitiveVisualWidget";
 export * from "./GeoMapScene";
+export * from "./kinetic";

@@ -7,6 +7,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { resolveAsset } from "../lib/resolveAsset";
+import { CognitiveVisualWidget, VisualModelConfig } from "./science/CognitiveVisualWidget";
 
 type ChangeDirection = "up" | "down" | "neutral";
 
@@ -19,6 +20,9 @@ interface ComparisonCardProps {
   rightColor?: string;
   leftImage?: string;
   rightImage?: string;
+  leftVisual?: VisualModelConfig;
+  rightVisual?: VisualModelConfig;
+  visualModel?: { left?: VisualModelConfig; right?: VisualModelConfig };
   title?: string;
   changeIndicator?: string;
   changeDirection?: ChangeDirection;
@@ -40,6 +44,9 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
   rightColor = "#10B981",
   leftImage,
   rightImage,
+  leftVisual,
+  rightVisual,
+  visualModel,
   title,
   changeIndicator,
   changeDirection = "neutral",
@@ -200,8 +207,27 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
               gap: 16,
             }}
           >
-            {/* Left icon */}
-            {leftImage && (
+            {/* Left visual model or icon */}
+            {leftVisual || visualModel?.left ? (
+              <div
+                style={{
+                  width: 240,
+                  height: 240,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  opacity: leftOpacity,
+                  transform: `scale(${leftScale})`,
+                }}
+              >
+                <CognitiveVisualWidget
+                  config={leftVisual || visualModel?.left}
+                  defaultColor={leftColor}
+                  accentColor={rightColor}
+                  size={220}
+                />
+              </div>
+            ) : leftImage ? (
               <Img
                 src={resolveAsset(leftImage)}
                 style={{
@@ -212,7 +238,7 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
                   transform: `scale(${leftScale})`,
                 }}
               />
-            )}
+            ) : null}
             {/* Left color accent bar */}
             <div
               style={{
@@ -346,8 +372,27 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
               gap: 16,
             }}
           >
-            {/* Right icon */}
-            {rightImage && (
+            {/* Right visual model or icon */}
+            {rightVisual || visualModel?.right ? (
+              <div
+                style={{
+                  width: 240,
+                  height: 240,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  opacity: rightOpacity,
+                  transform: `scale(${rightScale})`,
+                }}
+              >
+                <CognitiveVisualWidget
+                  config={rightVisual || visualModel?.right}
+                  defaultColor={rightColor}
+                  accentColor={leftColor}
+                  size={220}
+                />
+              </div>
+            ) : rightImage ? (
               <Img
                 src={resolveAsset(rightImage)}
                 style={{
@@ -358,7 +403,7 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({
                   transform: `scale(${rightScale})`,
                 }}
               />
-            )}
+            ) : null}
             {/* Right color accent bar */}
             <div
               style={{

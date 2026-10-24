@@ -30,8 +30,8 @@ import type { TerminalStep } from "./components/TerminalScene";
 import { ScreenshotScene } from "./components/ScreenshotScene";
 import type { ScreenshotStep } from "./components/ScreenshotScene";
 import { ProviderChip } from "./components/ProviderChip";
-import { ProcessFlow, RadialGauge, GeoMapScene } from "./components/science";
-import type { ProcessStep, VisualModelConfig } from "./components/science";
+import { ProcessFlow, RadialGauge, GeoMapScene, ProceduralKineticScene } from "./components/science";
+import type { ProcessStep, VisualModelConfig, KineticSceneSpec } from "./components/science";
 import { resolveAsset } from "./lib/resolveAsset";
 
 import type { ParticleType } from "./components/ParticleOverlay";
@@ -296,6 +296,8 @@ interface Cut {
   species?: string;
   timeline?: any[];
   rangePoints?: any[];
+  // Kinetic scene graph spec (type: "kinetic_scene")
+  kineticSpec?: KineticSceneSpec;
 }
 
 
@@ -821,6 +823,18 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         accentColor={accent}
         textColor={textColor}
         backgroundColor={bgColor}
+      />
+    );
+  }
+
+  // --- Kinetic Scene Graph Engine (Procedural Astrophysics & Science) ---
+  if (cut.type === "kinetic_scene" && cut.kineticSpec) {
+    return maybeWrapWithBg(
+      <ProceduralKineticScene
+        spec={cut.kineticSpec}
+        accentColor={accent}
+        textColor={textColor}
+        backgroundColor={bgColor || theme.backgroundColor}
       />
     );
   }
