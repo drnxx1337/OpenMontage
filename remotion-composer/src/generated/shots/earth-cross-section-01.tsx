@@ -152,7 +152,7 @@ const Shot: React.FC<ShotProps> = (props) => {
 
   const progress =
     durationInFrames <= 1 ? 0 : clamp01(frame / (durationInFrames - 1));
-  const cam = cameraTransform(frame, durationInFrames, "push", 0.045);
+  const cam = cameraTransform(frame, durationInFrames, "push", 0.09);
 
   const intro = clamp01((frame - 3) / 16);
   const captionIn = clamp01((frame - 18) / 16);
