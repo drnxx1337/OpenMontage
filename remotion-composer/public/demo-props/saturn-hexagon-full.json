@@ -1,0 +1,2476 @@
+{
+  "theme": "saturn-hexagon",
+  "themeConfig": {
+    "backgroundColor": "#0B1026",
+    "surfaceColor": "#151D3A",
+    "textColor": "#F5F1E6",
+    "mutedTextColor": "#9AA3B2",
+    "headingFont": "Space Grotesk",
+    "bodyFont": "Space Grotesk",
+    "monoFont": "Fira Code",
+    "springConfig": {
+      "damping": 12,
+      "stiffness": 80,
+      "mass": 1
+    },
+    "transitionDuration": 0.3,
+    "primaryColor": "#E8B84B",
+    "accentColor": "#7DD3FC",
+    "chartColors": [
+      "#E8B84B",
+      "#7DD3FC",
+      "#F59E0B",
+      "#2DD4BF",
+      "#94A3B8",
+      "#FB7185"
+    ],
+    "captionHighlightColor": "#7DD3FC",
+    "captionBackgroundColor": "rgba(11, 16, 38, 0.75)"
+  },
+  "cuts": [
+    {
+      "id": "SC-01-S01",
+      "source": "",
+      "in_seconds": 0.0,
+      "out_seconds": 4.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Saturn hangs tilted above black emptiness, golden hexagon glowing at its crown, rings slicing shadow diagonally.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-01-S02",
+      "source": "",
+      "in_seconds": 4.5,
+      "out_seconds": 9.7,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Hexagon",
+      "leftValue": "29,000 km",
+      "rightLabel": "Earth",
+      "rightValue": "12,742 km",
+      "title": "Hexagon vs Earth",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "leftImage": "saturn-hexagon-icon.png",
+      "rightImage": "earth-photo.png",
+      "changeIndicator": "2,3x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC-01-S03",
+      "source": "",
+      "in_seconds": 9.7,
+      "out_seconds": 14.4,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Extreme macro of churning ammonia cloud ridges folding into a razor-straight wall, amber crystals glittering.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-01-S04",
+      "source": "",
+      "in_seconds": 14.4,
+      "out_seconds": 19.8,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-01-S05",
+      "source": "",
+      "in_seconds": 19.8,
+      "out_seconds": 24.3,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Tiny probe silhouette crossing a colossal banded gas giant, dwarfed by geometry older than any machine.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-01-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 24.3,
+      "out_seconds": 29.4,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-01-S07",
+      "source": "",
+      "in_seconds": 29.4,
+      "out_seconds": 33.8,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "29,000 k",
+      "subtitle": "Hexagon width"
+    },
+    {
+      "id": "SC-01-S08",
+      "source": "",
+      "in_seconds": 33.8,
+      "out_seconds": 39.1,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Close dive into braided cloud filaments snapping into alignment along an invisible hexagonal boundary.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-01-S09",
+      "source": "",
+      "in_seconds": 39.1,
+      "out_seconds": 44.0,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Hazy stratospheric sunset over Saturn limb, hexagon edge catching last light, deep indigo gradient.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S01",
+      "source": "",
+      "in_seconds": 44.0,
+      "out_seconds": 47.9,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Grainy nineteen eighty-one flyby photograph surfacing in developer fluid, pale angular outline emerging across Saturn's disk.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S02",
+      "source": "",
+      "in_seconds": 47.9,
+      "out_seconds": 52.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Twin deep-space probes arcing past ringed Saturn, dishes glinting, engines dark, starfields wheeling behind.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S03",
+      "source": "",
+      "in_seconds": 52.5,
+      "out_seconds": 56.6,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "x": 1981,
+              "y": 0
+            },
+            {
+              "x": 2006,
+              "y": 25
+            },
+            {
+              "x": 2017,
+              "y": 36
+            },
+            {
+              "x": 2026,
+              "y": 45
+            }
+          ]
+        }
+      ],
+      "title": "Hexagon age since discovery"
+    },
+    {
+      "id": "SC-02-S04",
+      "source": "",
+      "in_seconds": 56.6,
+      "out_seconds": 61.4,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Lone receiver dish silhouette against dawn static, first pixelated Saturn image resolving line by line.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S05",
+      "source": "",
+      "in_seconds": 61.4,
+      "out_seconds": 65.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-02-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 65.3,
+      "out_seconds": 69.8,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-02-S07",
+      "source": "",
+      "in_seconds": 69.8,
+      "out_seconds": 73.6,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know panel: two brief flybys, twelve months apart, recorded the same impossible outline."
+    },
+    {
+      "id": "SC-02-S08",
+      "source": "",
+      "in_seconds": 73.6,
+      "out_seconds": 78.3,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Close study of magnetic tape reels spooling telemetry, oxide shimmer, amber indicator lamps pulsing.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S09",
+      "source": "",
+      "in_seconds": 78.3,
+      "out_seconds": 82.5,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Pale blue dot perspective: Saturn shrinking behind a departing craft, Sun flaring across the lens.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-02-S10",
+      "source": "",
+      "in_seconds": 82.5,
+      "out_seconds": 86.7,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Curled photographic printouts weighted by steel rulers, one angular storm ringed in red wax, lamplight pooling.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-03-S01",
+      "source": "",
+      "in_seconds": 86.7,
+      "out_seconds": 91.7,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Saturn filling the frame edge to edge, hexagon crowned in gold, rings sweeping past the camera.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-03-S02",
+      "source": "",
+      "in_seconds": 91.7,
+      "out_seconds": 97.4,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Pull back from marble-sized Earth globe beside a continent-scale golden polygon, scale dawning gradually.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-03-S03",
+      "source": "",
+      "in_seconds": 97.4,
+      "out_seconds": 102.6,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Hexagon",
+      "leftValue": "29,000 km",
+      "rightLabel": "Earth",
+      "rightValue": "12,742 km",
+      "title": "Span versus Earth",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "leftImage": "saturn-hexagon-icon.png",
+      "rightImage": "earth-photo.png",
+      "changeIndicator": "2,3x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC-03-S04",
+      "source": "",
+      "in_seconds": 102.6,
+      "out_seconds": 108.5,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "earth-photo.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-03-S05",
+      "source": "",
+      "in_seconds": 108.5,
+      "out_seconds": 113.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Minuscule probe silhouette coasting along a cloud wall taller than continents, lost in amber haze.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-03-S06",
+      "source": "saturn-hexagon-icon.png",
+      "in_seconds": 113.5,
+      "out_seconds": 119.1,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-03-S07",
+      "source": "",
+      "in_seconds": 119.1,
+      "out_seconds": 124.0,
+      "animation": "static",
+      "type": "bar_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Hexagon",
+          "value": 29000
+        },
+        {
+          "label": "Earth",
+          "value": 12742
+        }
+      ],
+      "title": "Width ranking, km"
+    },
+    {
+      "id": "SC-03-S08",
+      "source": "",
+      "in_seconds": 124.0,
+      "out_seconds": 129.8,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Slow glide above braided cloud canyons, walls of vapor rising like mountain ranges without rock.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-04-S01",
+      "source": "",
+      "in_seconds": 129.8,
+      "out_seconds": 134.1,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Eastward river of cloud circling the pole, straightening into facets as the viewpoint climbs higher.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-04-S02",
+      "source": "",
+      "in_seconds": 134.1,
+      "out_seconds": 139.1,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "320 km",
+      "subtitle": "Jet speed"
+    },
+    {
+      "id": "SC-04-S03",
+      "source": "",
+      "in_seconds": 139.1,
+      "out_seconds": 143.6,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Razor boundary where smooth laminar flow meets frothing turbulence, shear line glowing teal and rust.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-04-S04",
+      "source": "",
+      "in_seconds": 143.6,
+      "out_seconds": 148.8,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-04-S05",
+      "source": "",
+      "in_seconds": 148.8,
+      "out_seconds": 153.1,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Lone ice boulder silhouette surfing the jet boundary, tumbling end over end through glittering haze.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-04-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 153.1,
+      "out_seconds": 158.0,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-04-S07",
+      "source": "",
+      "in_seconds": 158.0,
+      "out_seconds": 162.2,
+      "animation": "static",
+      "type": "bar_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Speed",
+          "value": "320 km/h"
+        },
+        {
+          "label": "Width",
+          "value": "29,000 km"
+        },
+        {
+          "label": "Side count",
+          "value": "6"
+        },
+        {
+          "label": "Endurance",
+          "value": "40+ years"
+        }
+      ],
+      "title": "Northern jet metrics"
+    },
+    {
+      "id": "SC-04-S08",
+      "source": "",
+      "in_seconds": 162.2,
+      "out_seconds": 167.3,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Plunge toward a cloud wall crest where currents collide and fountain upward in slow motion.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-04-S09",
+      "source": "",
+      "in_seconds": 167.3,
+      "out_seconds": 172.0,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "High-altitude amber murk drifting over darker depths, facets of the jet faintly visible through haze.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S01",
+      "source": "",
+      "in_seconds": 172.0,
+      "out_seconds": 176.2,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Wind tunnel ribbons snapping horizontal, threads screaming past gauges frozen at triple-century marks.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S02",
+      "source": "",
+      "in_seconds": 176.2,
+      "out_seconds": 181.1,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Storm band accelerating around the limb, cloud turrets leaning downstream like grass in a gale.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S03",
+      "source": "",
+      "in_seconds": 181.1,
+      "out_seconds": 185.5,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "320 km/h",
+      "subtitle": "Jet speed readout"
+    },
+    {
+      "id": "SC-05-S04",
+      "source": "",
+      "in_seconds": 185.5,
+      "out_seconds": 190.6,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Tethered sensor package silhouette swinging in a test gale, cables straining sideways.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S05",
+      "source": "",
+      "in_seconds": 190.6,
+      "out_seconds": 194.8,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-05-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 194.8,
+      "out_seconds": 199.6,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-05-S07",
+      "source": "",
+      "in_seconds": 199.6,
+      "out_seconds": 203.7,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know note: this current has held speed for decades without engine or fuel."
+    },
+    {
+      "id": "SC-05-S08",
+      "source": "",
+      "in_seconds": 203.7,
+      "out_seconds": 208.7,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Frost crystals racing across a glass plate in a cryogenic airflow demo, branching then aligning.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S09",
+      "source": "",
+      "in_seconds": 208.7,
+      "out_seconds": 213.2,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Sheared cloud decks sliding past each other, shadows of upper layers racing over lower ones.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-05-S10",
+      "source": "",
+      "in_seconds": 213.2,
+      "out_seconds": 218.2,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Jagged lightning bolt silhouette forking through Saturn's night-side murk, flash freezing cloud towers.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-06-S01",
+      "source": "",
+      "in_seconds": 218.2,
+      "out_seconds": 223.4,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Transparent atmosphere layers sliding at different speeds, a frozen ripple suspended between them.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-06-S02",
+      "source": "",
+      "in_seconds": 223.4,
+      "out_seconds": 229.3,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Closeup of a river rapid holding a glassy standing hump over a hidden boulder, foam streaming past.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-06-S03",
+      "source": "",
+      "in_seconds": 229.3,
+      "out_seconds": 234.7,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know card: spin gradient alone can freeze giant meanders in place for decades."
+    },
+    {
+      "id": "SC-06-S04",
+      "source": "",
+      "in_seconds": 234.7,
+      "out_seconds": 240.8,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-06-S05",
+      "source": "",
+      "in_seconds": 240.8,
+      "out_seconds": 246.0,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Rocky riverbed silhouette beneath racing shallows, water piling into a motionless mound overhead.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-06-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 246.0,
+      "out_seconds": 251.8,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-06-S07",
+      "source": "",
+      "in_seconds": 251.8,
+      "out_seconds": 256.9,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "label": "1981-2006",
+              "value": 25
+            },
+            {
+              "label": "2006-2013",
+              "value": 7
+            },
+            {
+              "label": "2013-2017",
+              "value": 4
+            },
+            {
+              "label": "2017-2026",
+              "value": 9
+            }
+          ]
+        }
+      ],
+      "title": "Gaps between hexagon milestones, years"
+    },
+    {
+      "id": "SC-06-S08",
+      "source": "",
+      "in_seconds": 256.9,
+      "out_seconds": 263.1,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Ink dropped into a spinning dish, tendrils freezing into a six-lobed rosette, dye glowing.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-07-S01",
+      "source": "",
+      "in_seconds": 263.1,
+      "out_seconds": 267.6,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Overhead view of a circular laboratory tank, dyed water spiralling under a rotating lid.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-07-S02",
+      "source": "",
+      "in_seconds": 267.6,
+      "out_seconds": 272.8,
+      "animation": "static",
+      "type": "bar_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Oval",
+          "value": 0
+        },
+        {
+          "label": "Pentagon",
+          "value": 5
+        },
+        {
+          "label": "Hexagon",
+          "value": 6
+        }
+      ],
+      "title": "Polygon sides by spin state"
+    },
+    {
+      "id": "SC-07-S03",
+      "source": "",
+      "in_seconds": 272.8,
+      "out_seconds": 277.5,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Macro of green dye filaments snapping into straight segments along the tank's rotating jet.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-07-S04",
+      "source": "",
+      "in_seconds": 277.5,
+      "out_seconds": 282.9,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-07-S05",
+      "source": "",
+      "in_seconds": 282.9,
+      "out_seconds": 287.4,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Turntable silhouette rotating beneath glass, motor humming, dyed vortices trailing behind.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-07-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 287.4,
+      "out_seconds": 292.5,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-07-S07",
+      "source": "",
+      "in_seconds": 292.5,
+      "out_seconds": 296.9,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "6",
+      "subtitle": "Tank polygon"
+    },
+    {
+      "id": "SC-07-S08",
+      "source": "",
+      "in_seconds": 296.9,
+      "out_seconds": 302.2,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Dive into the tank's edge where a new vertex pinches into existence, dye folding sharply.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-07-S09",
+      "source": "",
+      "in_seconds": 302.2,
+      "out_seconds": 307.5,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Milky dye clouds blooming then organizing, chaos resolving into facets before the lens.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S01",
+      "source": "",
+      "in_seconds": 307.5,
+      "out_seconds": 311.7,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Infrared plunge toward a glowing polar eye, heat shimmering off concentric cloud rings.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S02",
+      "source": "",
+      "in_seconds": 311.7,
+      "out_seconds": 316.6,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Violet vortex core revealed as surrounding decks part, warm light welling from unseen depths.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S03",
+      "source": "",
+      "in_seconds": 316.6,
+      "out_seconds": 321.0,
+      "animation": "static",
+      "type": "kpi_grid",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Hexagon age",
+          "value": "40+ years"
+        },
+        {
+          "label": "Jet speed",
+          "value": "320 km/h"
+        },
+        {
+          "label": "Outer sides",
+          "value": "6"
+        },
+        {
+          "label": "Inner eyes",
+          "value": "1"
+        }
+      ],
+      "title": "Outer versus inner"
+    },
+    {
+      "id": "SC-08-S04",
+      "source": "",
+      "in_seconds": 321.0,
+      "out_seconds": 326.1,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Drifting ice shard silhouette spiralling toward the vortex centre, glittering then vanishing.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S05",
+      "source": "",
+      "in_seconds": 326.1,
+      "out_seconds": 330.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-08-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 330.3,
+      "out_seconds": 335.1,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-08-S07",
+      "source": "",
+      "in_seconds": 335.1,
+      "out_seconds": 339.2,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Outer boundary",
+      "leftValue": "6 sides",
+      "rightLabel": "Inner storm",
+      "rightValue": "1 eye",
+      "title": "Boundary shapes",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC"
+    },
+    {
+      "id": "SC-08-S08",
+      "source": "",
+      "in_seconds": 339.2,
+      "out_seconds": 344.2,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Retreat from boiling cloud turrets ringing the calm centre, contrast sharpening with distance.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S09",
+      "source": "",
+      "in_seconds": 344.2,
+      "out_seconds": 348.7,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Amber walls on one side, violet depths on the other, camera skimming the boundary between regimes.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-08-S10",
+      "source": "",
+      "in_seconds": 348.7,
+      "out_seconds": 353.7,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Dark funnel silhouette descending through lit haze, walls glowing where sunlight grazes them.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-09-S01",
+      "source": "",
+      "in_seconds": 353.7,
+      "out_seconds": 358.9,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Split-tone atmosphere: sapphire depths on the left dissolving into honeyed gold on the right.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-09-S02",
+      "source": "",
+      "in_seconds": 358.9,
+      "out_seconds": 364.8,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Methane haze particles swelling under ultraviolet glare, blue scattering surrendering to golden smog.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-09-S03",
+      "source": "",
+      "in_seconds": 364.8,
+      "out_seconds": 370.2,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "x": 2013,
+              "y": 0
+            },
+            {
+              "x": 2017,
+              "y": 4
+            }
+          ]
+        }
+      ],
+      "title": "Years into the colour shift"
+    },
+    {
+      "id": "SC-09-S04",
+      "source": "",
+      "in_seconds": 370.2,
+      "out_seconds": 376.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-09-S05",
+      "source": "",
+      "in_seconds": 376.3,
+      "out_seconds": 381.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Thin smog layer silhouette banding the limb, sunlight igniting its upper edge to copper.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-09-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 381.5,
+      "out_seconds": 387.3,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-09-S07",
+      "source": "",
+      "in_seconds": 387.3,
+      "out_seconds": 392.4,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Blue era",
+      "leftValue": "2013",
+      "rightLabel": "Gold era",
+      "rightValue": "2017",
+      "title": "Blue era versus gold era",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "changeIndicator": "1,0x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC-09-S08",
+      "source": "",
+      "in_seconds": 392.4,
+      "out_seconds": 398.6,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Sunbeams filtering through layered haze, scattering shifting from azure to amber along the beam.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-10-S01",
+      "source": "",
+      "in_seconds": 398.6,
+      "out_seconds": 403.1,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Southern pole crowned by a lone round vortex, no polygon anywhere, clouds spiralling smoothly.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-10-S02",
+      "source": "",
+      "in_seconds": 403.1,
+      "out_seconds": 408.3,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know insert: the south pole owns a vortex yet never grew a hexagon."
+    },
+    {
+      "id": "SC-10-S03",
+      "source": "",
+      "in_seconds": 408.3,
+      "out_seconds": 413.0,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Smooth southern cloud bands flowing in perfect circles, undisturbed by any straight segment.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-10-S04",
+      "source": "",
+      "in_seconds": 413.0,
+      "out_seconds": 418.4,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-10-S05",
+      "source": "",
+      "in_seconds": 418.4,
+      "out_seconds": 422.9,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Solitary storm cell silhouette adrift in southern currents, round and content, geometry-free.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-10-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 422.9,
+      "out_seconds": 428.0,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-10-S07",
+      "source": "",
+      "in_seconds": 428.0,
+      "out_seconds": 432.4,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "North hexagon",
+      "leftValue": "yes",
+      "rightLabel": "South hexagon",
+      "rightValue": "no",
+      "title": "Pole versus pole",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC"
+    },
+    {
+      "id": "SC-10-S08",
+      "source": "",
+      "in_seconds": 432.4,
+      "out_seconds": 437.7,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Dive into southern turbulence that tries, fails, and relaxes back into curves.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-10-S09",
+      "source": "",
+      "in_seconds": 437.7,
+      "out_seconds": 443.0,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Faint southern auroral glow rippling above the round vortex, green curtains stirring.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S01",
+      "source": "",
+      "in_seconds": 443.0,
+      "out_seconds": 446.9,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Clockwork orrery gears meshing, Saturn's pointer crawling while Earth's spins twenty-nine turns.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S02",
+      "source": "",
+      "in_seconds": 446.9,
+      "out_seconds": 451.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Saturn's full orbit drawn as a glowing ellipse, seasons marked along twenty-nine years of travel.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S03",
+      "source": "",
+      "in_seconds": 451.5,
+      "out_seconds": 455.6,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "label": "Saturn year",
+              "value": "29 years"
+            }
+          ]
+        }
+      ],
+      "title": "Saturn year"
+    },
+    {
+      "id": "SC-11-S04",
+      "source": "",
+      "in_seconds": 455.6,
+      "out_seconds": 460.4,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Wind-worn monolith silhouette counting shadows through fourteen-year nights.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S05",
+      "source": "",
+      "in_seconds": 460.4,
+      "out_seconds": 464.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-11-S06",
+      "source": "saturn-hexagon-icon.png",
+      "in_seconds": 464.3,
+      "out_seconds": 468.8,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-11-S07",
+      "source": "",
+      "in_seconds": 468.8,
+      "out_seconds": 472.6,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "x": 1981,
+              "y": 0
+            },
+            {
+              "x": 2013,
+              "y": 32
+            },
+            {
+              "x": 2017,
+              "y": 36
+            }
+          ]
+        }
+      ],
+      "title": "Observation across eras"
+    },
+    {
+      "id": "SC-11-S08",
+      "source": "",
+      "in_seconds": 472.6,
+      "out_seconds": 477.3,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Sediment layers in an ice core analogue, each band a year, twenty-nine bands glowing.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S09",
+      "source": "",
+      "in_seconds": 477.3,
+      "out_seconds": 481.5,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Long shadows wheeling across the rings as the distant Sun crawls along its slow circuit.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-11-S10",
+      "source": "",
+      "in_seconds": 481.5,
+      "out_seconds": 485.7,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Lone comet silhouette arcing past, tail streaming, while Saturn lumbers through a fraction of its year.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-12-S01",
+      "source": "",
+      "in_seconds": 485.7,
+      "out_seconds": 491.0,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "High summer glare flooding the northern cap, hexagon rim blazing white-gold at maximum tilt.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-12-S02",
+      "source": "",
+      "in_seconds": 491.0,
+      "out_seconds": 497.0,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Sunlit cloud peaks casting stubby shadows, texture crisp under the directly overhead Sun.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-12-S03",
+      "source": "",
+      "in_seconds": 497.0,
+      "out_seconds": 502.5,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Solstice",
+      "leftValue": "May 2017",
+      "rightLabel": "Finale",
+      "rightValue": "Sep 2017",
+      "title": "Solstice versus finale",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC"
+    },
+    {
+      "id": "SC-12-S04",
+      "source": "",
+      "in_seconds": 502.5,
+      "out_seconds": 508.7,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-12-S05",
+      "source": "",
+      "in_seconds": 508.7,
+      "out_seconds": 514.0,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Ring shadow silhouettes slicing across the winter hemisphere, sharp black bands on gold.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-12-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 514.0,
+      "out_seconds": 519.9,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-12-S07",
+      "source": "",
+      "in_seconds": 519.9,
+      "out_seconds": 525.1,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know flag: solstice arrived mere months before Cassini's planned end."
+    },
+    {
+      "id": "SC-12-S08",
+      "source": "",
+      "in_seconds": 525.1,
+      "out_seconds": 531.5,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Glittering haze motes igniting one by one as sunlight crests the polar rim.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-13-S01",
+      "source": "",
+      "in_seconds": 531.5,
+      "out_seconds": 536.0,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Silver craft gliding above banded clouds, camera drum rotating, data streaming homeward.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-13-S02",
+      "source": "",
+      "in_seconds": 536.0,
+      "out_seconds": 541.2,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "x": 2006,
+              "y": 0
+            },
+            {
+              "x": 2011,
+              "y": 5
+            },
+            {
+              "x": 2017,
+              "y": 11
+            }
+          ]
+        }
+      ],
+      "title": "Cassini hexagon watch, elapsed years"
+    },
+    {
+      "id": "SC-13-S03",
+      "source": "",
+      "in_seconds": 541.2,
+      "out_seconds": 545.9,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Shutter blades slicing light into frames, each exposure stacking into a polar movie.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-13-S04",
+      "source": "",
+      "in_seconds": 545.9,
+      "out_seconds": 551.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-13-S05",
+      "source": "",
+      "in_seconds": 551.3,
+      "out_seconds": 555.8,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Dish antenna silhouette sweeping the sky, locking onto a whisper from a billion kilometres out.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-13-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 555.8,
+      "out_seconds": 560.9,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-13-S07",
+      "source": "",
+      "in_seconds": 560.9,
+      "out_seconds": 565.3,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "11 years",
+      "subtitle": "Cassini hexagon watch"
+    },
+    {
+      "id": "SC-13-S08",
+      "source": "",
+      "in_seconds": 565.3,
+      "out_seconds": 570.6,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Film-strip dive through stacked exposures, the polygon jittering then locking into focus.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-13-S09",
+      "source": "",
+      "in_seconds": 570.6,
+      "out_seconds": 575.5,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Silent orbital nightside pass, instrument lights blinking, Saturn's crescent swelling below.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S01",
+      "source": "",
+      "in_seconds": 575.5,
+      "out_seconds": 579.5,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Gap between razor rings and cloud tops widening ahead, a corridor no craft had dared.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S02",
+      "source": "",
+      "in_seconds": 579.5,
+      "out_seconds": 584.2,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Final trajectory arc bending into Saturn's glow, signal fading across deepening static.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S03",
+      "source": "",
+      "in_seconds": 584.2,
+      "out_seconds": 588.4,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Farewell fact: twenty-two daring dives threaded the ring gap before the last plunge."
+    },
+    {
+      "id": "SC-14-S04",
+      "source": "",
+      "in_seconds": 588.4,
+      "out_seconds": 593.3,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Fragmenting hull silhouette dissolving into streaks of plasma, telemetry flickering out gracefully.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S05",
+      "source": "",
+      "in_seconds": 593.3,
+      "out_seconds": 597.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-14-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 597.3,
+      "out_seconds": 601.9,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-14-S07",
+      "source": "",
+      "in_seconds": 601.9,
+      "out_seconds": 605.8,
+      "animation": "static",
+      "type": "bar_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Voyager flybys",
+          "value": 2
+        },
+        {
+          "label": "Cassini watch years",
+          "value": 11
+        }
+      ],
+      "title": "Close encounters with Saturn"
+    },
+    {
+      "id": "SC-14-S08",
+      "source": "",
+      "in_seconds": 605.8,
+      "out_seconds": 610.6,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Heat-shield glow blooming across the frame, molecules splitting into incandescent trails.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S09",
+      "source": "",
+      "in_seconds": 610.6,
+      "out_seconds": 614.9,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Empty ring plane after departure, dust motes continuing their ancient circuits undisturbed.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-14-S10",
+      "source": "",
+      "in_seconds": 614.9,
+      "out_seconds": 619.9,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Dying carrier wave visualized as ripples flattening into a still pond of static.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-15-S01",
+      "source": "",
+      "in_seconds": 619.9,
+      "out_seconds": 624.8,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Decades compressed: the hexagon spinning serenely while calendar auroras flicker past unseen.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-15-S02",
+      "source": "",
+      "in_seconds": 624.8,
+      "out_seconds": 630.4,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Stack of photographic prints from four decades, hexagon identical in every frame, emulsions aging.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-15-S03",
+      "source": "",
+      "in_seconds": 630.4,
+      "out_seconds": 635.5,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "40+ years",
+      "subtitle": "Hexagon lifetime"
+    },
+    {
+      "id": "SC-15-S04",
+      "source": "",
+      "in_seconds": 635.5,
+      "out_seconds": 641.3,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-icon.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-15-S05",
+      "source": "",
+      "in_seconds": 641.3,
+      "out_seconds": 646.2,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Eroded cliff silhouette standing while flash floods carve around it, unmoved across epochs.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-15-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 646.2,
+      "out_seconds": 651.7,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-15-S07",
+      "source": "",
+      "in_seconds": 651.7,
+      "out_seconds": 656.5,
+      "animation": "static",
+      "type": "kpi_grid",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Discovered",
+          "value": "1981"
+        },
+        {
+          "label": "Watched",
+          "value": "40+ years"
+        },
+        {
+          "label": "Colour eras",
+          "value": "2"
+        },
+        {
+          "label": "Status",
+          "value": "spinning"
+        }
+      ],
+      "title": "Longevity dashboard"
+    },
+    {
+      "id": "SC-15-S08",
+      "source": "",
+      "in_seconds": 656.5,
+      "out_seconds": 662.1,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Stone strata in a canyon wall, forty bands highlighted, hexagon light playing over them.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-16-S01",
+      "source": "",
+      "in_seconds": 662.1,
+      "out_seconds": 666.4,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Geometric overlay blooming over the pole: six crests locking while five and seven dissolve.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-16-S02",
+      "source": "",
+      "in_seconds": 666.4,
+      "out_seconds": 671.4,
+      "animation": "static",
+      "type": "bar_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Square",
+          "value": 4
+        },
+        {
+          "label": "Pentagon",
+          "value": 5
+        },
+        {
+          "label": "Hexagon",
+          "value": 6
+        }
+      ],
+      "title": "Sides of perfect polygons"
+    },
+    {
+      "id": "SC-16-S03",
+      "source": "",
+      "in_seconds": 671.4,
+      "out_seconds": 675.9,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Sun-cracked mud flats tiling into rough hexagons, nature sketching the same answer.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-16-S04",
+      "source": "",
+      "in_seconds": 675.9,
+      "out_seconds": 681.1,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-16-S05",
+      "source": "",
+      "in_seconds": 681.1,
+      "out_seconds": 685.4,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Sixfold snowflake silhouette tumbling through frozen mist, symmetry forming unasked.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-16-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 685.4,
+      "out_seconds": 690.3,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-16-S07",
+      "source": "",
+      "in_seconds": 690.3,
+      "out_seconds": 694.5,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Five sides",
+      "leftValue": "5",
+      "rightLabel": "Six sides",
+      "rightValue": "6",
+      "title": "Five versus six",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "changeIndicator": "0,8x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC-16-S08",
+      "source": "",
+      "in_seconds": 694.5,
+      "out_seconds": 699.6,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Dive along one straight wall from vertex to vertex, clouds streaming parallel without deviation.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-16-S09",
+      "source": "",
+      "in_seconds": 699.6,
+      "out_seconds": 704.3,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Honeycomb-patterned fog banks condensing over cold cloud decks, cells merging into lanes.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S01",
+      "source": "",
+      "in_seconds": 704.3,
+      "out_seconds": 708.2,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Spiral cloud arms of a terrestrial cyclone coiling over blue ocean, ragged and restless.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S02",
+      "source": "",
+      "in_seconds": 708.2,
+      "out_seconds": 712.8,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Split planet view: Earth's swirling white tempests shrinking beside Saturn's rigid golden frame.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S03",
+      "source": "",
+      "in_seconds": 712.8,
+      "out_seconds": 716.9,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Hurricane life",
+      "leftValue": "weeks",
+      "rightLabel": "Hexagon life",
+      "rightValue": "40+ years",
+      "title": "Spirals versus polygon",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC"
+    },
+    {
+      "id": "SC-17-S04",
+      "source": "",
+      "in_seconds": 716.9,
+      "out_seconds": 721.7,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Storm-tossed wave crest silhouette bursting into spray, formless energy dissipating seaward.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S05",
+      "source": "",
+      "in_seconds": 721.7,
+      "out_seconds": 725.6,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "earth-photo.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-17-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 725.6,
+      "out_seconds": 730.1,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-17-S07",
+      "source": "",
+      "in_seconds": 730.1,
+      "out_seconds": 733.9,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know aside: identical fluid laws govern both, only size and setting differ."
+    },
+    {
+      "id": "SC-17-S08",
+      "source": "",
+      "in_seconds": 733.9,
+      "out_seconds": 738.6,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Eddies spinning off a river boulder, lifespans measured in seconds, chaos undisguised.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S09",
+      "source": "",
+      "in_seconds": 738.6,
+      "out_seconds": 742.8,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Towering thunderheads boiling upward, anvils spreading, whole systems living and dying in days.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-17-S10",
+      "source": "",
+      "in_seconds": 742.8,
+      "out_seconds": 747.0,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Gliding seabird silhouette circling a storm's edge, riding winds it never controls.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-18-S01",
+      "source": "",
+      "in_seconds": 747.0,
+      "out_seconds": 751.9,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Supercomputer simulation volume rendering, ghostly hexagons flickering in and out of stability.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-18-S02",
+      "source": "",
+      "in_seconds": 751.9,
+      "out_seconds": 757.5,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Pull back from a maze of forking pathways in glowing fog, most routes dead-ending in circles.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-18-S03",
+      "source": "",
+      "in_seconds": 757.5,
+      "out_seconds": 762.6,
+      "animation": "static",
+      "type": "kpi_grid",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartData": [
+        {
+          "label": "Hexagon sides known",
+          "value": "6"
+        },
+        {
+          "label": "Deep interior seen",
+          "value": "0"
+        },
+        {
+          "label": "Colour eras explained",
+          "value": "2"
+        },
+        {
+          "label": "Models agreeing",
+          "value": "0"
+        }
+      ],
+      "title": "Known versus unknown"
+    },
+    {
+      "id": "SC-18-S04",
+      "source": "",
+      "in_seconds": 762.6,
+      "out_seconds": 768.4,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-18-S05",
+      "source": "",
+      "in_seconds": 768.4,
+      "out_seconds": 773.3,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Submerged ridge silhouette steering surface currents that never touch it, influence without contact.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-18-S06",
+      "source": "saturn-hexagon-icon.png",
+      "in_seconds": 773.3,
+      "out_seconds": 778.8,
+      "animation": "static",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-18-S07",
+      "source": "",
+      "in_seconds": 778.8,
+      "out_seconds": 783.6,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "0",
+      "subtitle": "Sub-cloud samples"
+    },
+    {
+      "id": "SC-18-S08",
+      "source": "",
+      "in_seconds": 783.6,
+      "out_seconds": 789.2,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Crushing pressure gradient visualized as darkening blue depths swallowing a shaft of light.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-19-S01",
+      "source": "",
+      "in_seconds": 789.2,
+      "out_seconds": 793.6,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Future craft approaching a still-spinning hexagon, gold as ever, decades after Cassini's fall.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-19-S02",
+      "source": "",
+      "in_seconds": 793.6,
+      "out_seconds": 798.7,
+      "animation": "static",
+      "type": "callout",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "text": "Did you know outlook: the record shows no decay, only patience measured in decades."
+    },
+    {
+      "id": "SC-19-S03",
+      "source": "",
+      "in_seconds": 798.7,
+      "out_seconds": 803.3,
+      "animation": "pan-right",
+      "type": "text_card",
+      "text": "Deep heat currents rising through stratified haze, feeding the jet from inexhaustible depths.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-19-S04",
+      "source": "",
+      "in_seconds": 803.3,
+      "out_seconds": 808.6,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-19-S05",
+      "source": "",
+      "in_seconds": 808.6,
+      "out_seconds": 813.0,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Comet silhouette plunging sunward, Saturn's gravity bending its path but sparing the pole.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-19-S06",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 813.0,
+      "out_seconds": 818.0,
+      "animation": "zoom-out",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-19-S07",
+      "source": "",
+      "in_seconds": 818.0,
+      "out_seconds": 822.3,
+      "animation": "static",
+      "type": "line_chart",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "chartSeries": [
+        {
+          "label": "Series",
+          "data": [
+            {
+              "x": 1981,
+              "y": 0
+            },
+            {
+              "x": 2006,
+              "y": 25
+            },
+            {
+              "x": 2017,
+              "y": 36
+            },
+            {
+              "x": 2026,
+              "y": 45
+            }
+          ]
+        }
+      ],
+      "title": "Confirmed hexagon age by era"
+    },
+    {
+      "id": "SC-19-S08",
+      "source": "",
+      "in_seconds": 822.3,
+      "out_seconds": 827.5,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Cooling ember bed breathing faintly, heat ebbing over geological time.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-19-S09",
+      "source": "",
+      "in_seconds": 827.5,
+      "out_seconds": 832.8,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Serene far-future pole, hexagon faintly veiled by thicker haze, still unmistakably six-sided.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S01",
+      "source": "",
+      "in_seconds": 832.8,
+      "out_seconds": 836.9,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Molten gold ring cooling into a perfect hexagon, edges hardening one by one.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S02",
+      "source": "",
+      "in_seconds": 836.9,
+      "out_seconds": 841.7,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Full-disk Saturn retreating into starfields, hexagon winking at the crown until light swallows it.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S03",
+      "source": "",
+      "in_seconds": 841.7,
+      "out_seconds": 846.0,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Hexagon width",
+      "leftValue": "29,000 km",
+      "rightLabel": "Earth width",
+      "rightValue": "12,742 km",
+      "title": "Closing measure",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "changeIndicator": "2,3x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC-20-S04",
+      "source": "",
+      "in_seconds": 846.0,
+      "out_seconds": 851.0,
+      "animation": "ken-burns",
+      "type": "text_card",
+      "text": "Lone ring particle silhouette glittering in slow orbit, one mote in an infinite disk.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S05",
+      "source": "",
+      "in_seconds": 851.0,
+      "out_seconds": 855.1,
+      "animation": "drift-down",
+      "type": "anime_scene",
+      "images": [
+        "saturn-hexagon-pole.png"
+      ],
+      "strategy": "dynamic_map_motion",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-20-S06",
+      "source": "saturn-hexagon-icon.png",
+      "in_seconds": 855.1,
+      "out_seconds": 859.8,
+      "animation": "ken-burns",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    },
+    {
+      "id": "SC-20-S07",
+      "source": "",
+      "in_seconds": 859.8,
+      "out_seconds": 863.8,
+      "animation": "static",
+      "type": "stat_card",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "stat": "2.3x",
+      "subtitle": "Parting figures"
+    },
+    {
+      "id": "SC-20-S08",
+      "source": "",
+      "in_seconds": 863.8,
+      "out_seconds": 868.7,
+      "animation": "zoom-out",
+      "type": "text_card",
+      "text": "Retreat from cloud filigree into the black, Saturn shrinking to a lantern with a secret.",
+      "strategy": "genai_macro",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S09",
+      "source": "",
+      "in_seconds": 868.7,
+      "out_seconds": 873.1,
+      "animation": "pan-left",
+      "type": "text_card",
+      "text": "Amber limb haze trailing into darkness, the hexagon's edge catching final photons.",
+      "strategy": "genai_atmospheric",
+      "engine": "genai"
+    },
+    {
+      "id": "SC-20-S10",
+      "source": "",
+      "in_seconds": 873.1,
+      "out_seconds": 878.1,
+      "animation": "zoom-in",
+      "type": "text_card",
+      "text": "Encroaching night silhouette swallowing the rings edge first, gold last.",
+      "strategy": "genai_silhouette",
+      "engine": "genai"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "section_title",
+      "in_seconds": 0.3,
+      "out_seconds": 6.0,
+      "text": "Six Sides Should Not Exist"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 44.3,
+      "out_seconds": 50.0,
+      "text": "A Photograph From 1981"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 87.0,
+      "out_seconds": 92.7,
+      "text": "Wider Than an Entire World"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 130.1,
+      "out_seconds": 135.8,
+      "text": "The Jet That Refuses to Curve"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 172.3,
+      "out_seconds": 178.0,
+      "text": "Three Hundred Twenty Kilometres per Hour"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 218.5,
+      "out_seconds": 224.2,
+      "text": "A Wave That Stands Still"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 263.4,
+      "out_seconds": 269.1,
+      "text": "Spinning Water in Oxford"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 307.8,
+      "out_seconds": 313.5,
+      "text": "The Eye Inside the Polygon"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 354.0,
+      "out_seconds": 359.7,
+      "text": "When Blue Turned to Gold"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 398.9,
+      "out_seconds": 404.6,
+      "text": "The South Pole Disobeys"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 443.3,
+      "out_seconds": 449.0,
+      "text": "A Year Lasting Twenty-Nine"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 486.0,
+      "out_seconds": 491.7,
+      "text": "Solstice Over the Rings"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 531.8,
+      "out_seconds": 537.5,
+      "text": "Cassini Takes the Long Watch"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 575.8,
+      "out_seconds": 581.5,
+      "text": "The Final Plunge"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 620.2,
+      "out_seconds": 625.9,
+      "text": "Forty Years Without Breaking"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 662.4,
+      "out_seconds": 668.1,
+      "text": "Why Six Corners, Not Five"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 704.6,
+      "out_seconds": 710.3,
+      "text": "No Hurricane Behaves Like This"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 747.3,
+      "out_seconds": 753.0,
+      "text": "What the Models Still Miss"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 789.5,
+      "out_seconds": 795.2,
+      "text": "Could the Hexagon Die"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 833.1,
+      "out_seconds": 838.8,
+      "text": "Saturn Signs Its Name"
+    }
+  ],
+  "captions": [],
+  "audio": {}
+}

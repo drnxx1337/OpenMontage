@@ -1,0 +1,78 @@
+{
+  "theme": "saturn-hexagon",
+  "themeConfig": {
+    "backgroundColor": "#0B1026",
+    "surfaceColor": "#151D3A",
+    "textColor": "#F5F1E6",
+    "mutedTextColor": "#9AA3B2",
+    "headingFont": "Space Grotesk",
+    "bodyFont": "Space Grotesk",
+    "monoFont": "Fira Code",
+    "springConfig": {
+      "damping": 12,
+      "stiffness": 80,
+      "mass": 1
+    },
+    "transitionDuration": 0.3,
+    "primaryColor": "#E8B84B",
+    "accentColor": "#7DD3FC",
+    "chartColors": [
+      "#E8B84B",
+      "#7DD3FC",
+      "#F59E0B",
+      "#2DD4BF",
+      "#94A3B8",
+      "#FB7185"
+    ],
+    "captionHighlightColor": "#7DD3FC",
+    "captionBackgroundColor": "rgba(11, 16, 38, 0.75)"
+  },
+  "cuts": [
+    {
+      "id": "SC01-S01",
+      "source": "",
+      "in_seconds": 0.0,
+      "out_seconds": 6.0,
+      "animation": "static",
+      "type": "comparison",
+      "strategy": "data_infographic",
+      "engine": "remotion",
+      "leftLabel": "Hexagon",
+      "leftValue": "29,000 km",
+      "rightLabel": "Earth",
+      "rightValue": "12,742 km",
+      "title": "Hexagon vs Earth",
+      "leftColor": "#E8B84B",
+      "rightColor": "#7DD3FC",
+      "leftImage": "saturn-hexagon-icon.png",
+      "rightImage": "earth-photo.png",
+      "changeIndicator": "2,3x",
+      "changeDirection": "neutral"
+    },
+    {
+      "id": "SC02-S01",
+      "source": "saturn-hexagon-nasa.jpg",
+      "in_seconds": 6.0,
+      "out_seconds": 12.0,
+      "animation": "zoom-in",
+      "strategy": "archival_parallax_2_5d",
+      "engine": "remotion"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "section_title",
+      "in_seconds": 0.3,
+      "out_seconds": 6.0,
+      "text": "The Impossible Hexagon"
+    },
+    {
+      "type": "section_title",
+      "in_seconds": 6.3,
+      "out_seconds": 12.0,
+      "text": "A Map That Should Not Exist"
+    }
+  ],
+  "captions": [],
+  "audio": {}
+}

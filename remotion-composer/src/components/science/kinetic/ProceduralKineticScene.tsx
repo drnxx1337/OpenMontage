@@ -396,12 +396,20 @@ export const ProceduralKineticScene: React.FC<ProceduralKineticSceneProps> = ({
                 {/* Layered Cross-Section / Core Cutaway */}
                 {body.cutaway?.enabled && (
                   <g id={`cutaway-${body.id}`}>
-                    {/* Wedge path (default 90 deg quarter cutaway) */}
-                    {body.cutaway.layers
-                      .slice()
-                      .sort((a, b) => b.depthRatio - a.depthRatio)
-                      .map((layer, lIdx) => {
+                    {(() => {
+                      const sorted = body.cutaway.layers
+                        .slice()
+                        .sort((a, b) => b.depthRatio - a.depthRatio);
+                      return sorted.map((layer, lIdx) => {
                         const layerR = r * layer.depthRatio;
+                        const nextLayerR = lIdx < sorted.length - 1 ? r * sorted[lIdx + 1].depthRatio : 0;
+                        const midR = (layerR + nextLayerR) / 2;
+                        // Stagger angles within the 90-degree quadrant so labels don't collide
+                        const angle = Math.PI * 0.16 + (lIdx * (Math.PI * 0.20));
+                        const lx = Math.cos(angle) * midR;
+                        const ly = -Math.sin(angle) * midR;
+                        const fontSize = Math.max(9, Math.min(12, r * 0.11));
+
                         return (
                           <g key={lIdx}>
                             {/* Wedge sector: Top-right quadrant */}
@@ -412,22 +420,27 @@ export const ProceduralKineticScene: React.FC<ProceduralKineticSceneProps> = ({
                               strokeWidth={1.5}
                             />
                             {/* Layer label if requested */}
-                            {body.cutaway?.showLabels !== false && layer.label && (
+                            {body.cutaway?.showLabels !== false && layer.label && midR >= 16 && (
                               <text
-                                x={layerR * 0.55}
-                                y={-layerR * 0.45}
+                                x={lx}
+                                y={ly}
                                 fill="#FFFFFF"
-                                fontSize={14}
+                                stroke="#0B1026"
+                                strokeWidth={2.5}
+                                paintOrder="stroke fill"
+                                fontSize={fontSize}
                                 fontWeight={700}
                                 fontFamily="Space Grotesk, sans-serif"
                                 textAnchor="middle"
+                                dominantBaseline="central"
                               >
                                 {layer.label}
                               </text>
                             )}
                           </g>
                         );
-                      })}
+                      });
+                    })()}
 
                     {/* Geodynamo Helical Magnetic Convection in Liquid Outer Core */}
                     {body.cutaway.dynamoEffect && (
