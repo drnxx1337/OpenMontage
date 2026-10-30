@@ -104,3 +104,10 @@ venv/
 
 # Local Wan / diffusers GPU environment
 .venv-wan/
+
+# Per-run generated demo props (content-hash named)
+remotion-composer/public/demo-props/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*.json
+remotion-composer/public/demo-props/*-SC*.json
+remotion-composer/public/demo-props/remotion_*.json
+remotion-composer/public/demo-props/prj_*.json
+remotion-composer/src/generated/**/*.rejected.tsx
