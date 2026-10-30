@@ -152,7 +152,7 @@ const Shot: React.FC<ShotProps> = (props) => {
 
   const progress =
     durationInFrames <= 1 ? 0 : clamp01(frame / (durationInFrames - 1));
-  const cam = cameraTransform("push", progress);
+  const cam = cameraTransform(frame, durationInFrames, "push", 0.045);
 
   const intro = clamp01((frame - 3) / 16);
   const captionIn = clamp01((frame - 18) / 16);
@@ -258,7 +258,7 @@ const Shot: React.FC<ShotProps> = (props) => {
           top: 0,
           width,
           height,
-          transform: cam,
+          ...cam,
           transformOrigin: `${cx}px ${cy}px`,
         }}
       >
@@ -296,7 +296,7 @@ const Shot: React.FC<ShotProps> = (props) => {
               fill="none"
               stroke={tokens.muted}
               strokeWidth={1}
-              opacity={0.85}
+              opacity={0.55}
             />
           </svg>
         </div>
@@ -390,10 +390,22 @@ const Shot: React.FC<ShotProps> = (props) => {
                   fontFamily={tokens.fontFamily}
                   textAnchor="middle"
                 >
-                  {group(mantleThickness)} {surface.unit}
+                  {group(mantleThickness)} {surface.unit} thick
                 </text>
               </g>
             ) : null}
+
+            <text
+              x={axisOrigin}
+              y={axisBase + 40}
+              fill={tokens.muted}
+              fontSize={tickSize}
+              fontFamily={tokens.fontFamily}
+              letterSpacing={Math.max(1, tickSize * 0.1)}
+              textAnchor="start"
+            >
+              {`RADIUS FROM CENTRE (${surface.unit.toUpperCase()})`}
+            </text>
           </svg>
         </div>
 
@@ -466,7 +478,8 @@ const Shot: React.FC<ShotProps> = (props) => {
                   whiteSpace: "nowrap",
                 }}
               >
-                {group(datum.value)} {datum.unit}
+                {group(datum.value)} {datum.unit}{" "}
+                {isCrust ? "thick" : "from centre"}
               </div>
             </div>
           );
