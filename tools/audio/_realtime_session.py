@@ -8,11 +8,12 @@ import time
 from urllib.parse import urlparse, urlencode
 import requests
 
-# Realtime audio is the only consumer of websockets, and it is an optional
-# extra. Importing it at module scope made a missing package abort the import
-# of this module — and, because the tool registry imports every tool module to
-# discover it, of the whole registry. The transport is therefore resolved on
-# first connect, where a clear, actionable error can be raised instead.
+# Realtime audio requires websockets>=14.0; it is imported lazily so tool
+# discovery works without it. Importing it at module scope made a missing
+# package abort the import of this module — and, because the tool registry
+# imports every tool module to discover it, of the whole registry. The
+# transport is therefore resolved on first connect, where a clear, actionable
+# error can be raised instead.
 WEBSOCKETS_REQUIREMENT = 'realtime audio requires websockets>=14.0; pip install "websockets>=14.0"'
 
 
