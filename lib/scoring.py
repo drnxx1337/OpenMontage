@@ -14,12 +14,18 @@ import logging
 import re
 from typing import Any
 
+from tools.provider_pricing import PriceQuoteRequired
+
 logger = logging.getLogger(__name__)
 
-# Cost score used when a tool cannot price the work (``estimate_cost`` raised).
-# 0.0 read as "free" and won every ranking; 1.0 would be a lie. 0.5 is neutral:
-# the unknown-cost tool neither wins nor loses on this dimension.
-UNKNOWN_COST_EFFICIENCY = 0.5
+# Cost score used when a tool cannot price the work (``estimate_cost`` raised
+# or demanded an account-specific quote). Priced bands run free=1.0,
+# <20% of budget=0.8, 20-50%=0.5, >50%=0.1, over-budget=0.0. 0.3 sits below the
+# 20-50% band and above the "known expensive" scores, so an unpriced tool
+# neither wins nor loses on this 0.10-weighted dimension. 0.0 would be the
+# punitive over-budget score (the old merge did that and called it "free" by
+# mistake), and 1.0 would claim the work is free.
+UNKNOWN_COST_EFFICIENCY = 0.3
 
 
 # ---------------------------------------------------------------------------
@@ -430,11 +436,16 @@ def score_provider(tool, task_context: dict[str, Any]) -> ProviderScore:
     # Cost efficiency
     try:
         estimated_cost = tool.estimate_cost(task_context)
+    except PriceQuoteRequired:
+        # Designed control-flow signal: this provider needs an account-specific
+        # quote. Not a failure, so no warning — just an unpriced score.
+        estimated_cost = None
     except Exception as exc:
-        # An unpriced tool must not silently look free: warn and score neutral.
+        # A genuine pricing failure must not silently look free: warn and
+        # score the cost as unknown.
         logger.warning(
-            "estimate_cost failed for tool %s: %s — scoring cost at the neutral "
-            "%.2f instead of 0.0",
+            "estimate_cost failed for tool %s: %s — scoring cost as unknown "
+            "(%.2f) instead of 0.0",
             info.get("name", "unknown"),
             exc,
             UNKNOWN_COST_EFFICIENCY,
