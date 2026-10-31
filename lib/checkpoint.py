@@ -281,6 +281,17 @@ def _stage_requires_approval(pipeline_type: Optional[str], stage: str) -> Option
     return get_stage_human_approval_default(manifest, stage)
 
 
+def _is_legacy_pipeline_type(value: Any) -> bool:
+    """True for the pipeline_type values written before pipeline scoping.
+
+    ``write_checkpoint`` stores ``"unknown"`` when no type is supplied, and a
+    hand-written file may carry ``""``. Both name no pipeline, so they are
+    legacy unscoped data. The key itself is required by the checkpoint schema,
+    so a file without it is invalid rather than legacy.
+    """
+    return value in (None, "", "unknown")
+
+
 def _enforce_stage_prerequisites(
     pipeline_dir: Path,
     project_id: str,
@@ -318,11 +329,11 @@ def _enforce_stage_prerequisites(
         except (OSError, json.JSONDecodeError, CheckpointValidationError):
             incomplete.append(predecessor)
             continue
-        if (
-            checkpoint.get("project_id") != project_id
-            or checkpoint.get("pipeline_type") != pipeline_type
-            or checkpoint.get("stage") != predecessor
-        ):
+        if checkpoint.get("project_id") != project_id or checkpoint.get("stage") != predecessor:
+            incomplete.append(predecessor)
+            continue
+        recorded_type = checkpoint.get("pipeline_type")
+        if recorded_type != pipeline_type and not _is_legacy_pipeline_type(recorded_type):
             incomplete.append(predecessor)
             continue
         if checkpoint.get("status") != "completed":
@@ -611,11 +622,11 @@ def get_completed_stages(
     pipeline's manifest and requires their recorded pipeline_type to match —
     preventing false positives from a previous pipeline's shared stages.
 
-    Checkpoints written before pipeline scoping existed carry no pipeline_type
-    (``write_checkpoint`` stores ``"unknown"`` when none is supplied). Those
-    records describe no other pipeline, so a missing, empty or ``"unknown"``
-    pipeline_type is treated as legacy unscoped data and still counts as
-    completed. A checkpoint that names a pipeline must match exactly.
+    Legacy means an empty or ``"unknown"`` pipeline_type only: that is what
+    ``write_checkpoint`` stores when no scope was supplied, and neither value
+    names another pipeline, so such records still count as completed. The
+    schema requires the ``pipeline_type`` key, so a file that omits it is
+    invalid, not legacy. A checkpoint that names a pipeline must match exactly.
     """
     stages_to_check = get_pipeline_stages(pipeline_type)
     completed = []
@@ -627,7 +638,7 @@ def get_completed_stages(
         if (
             pipeline_type is None
             or recorded_type == pipeline_type
-            or recorded_type in (None, "", "unknown")
+            or _is_legacy_pipeline_type(recorded_type)
         ):
             completed.append(stage)
     return completed
