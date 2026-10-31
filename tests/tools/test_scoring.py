@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from lib.scoring import _tokenize_text, score_provider
+import logging
+
+from lib.scoring import UNKNOWN_COST_EFFICIENCY, _tokenize_text, score_provider
 from tools.base_tool import ToolStatus
 
 
@@ -45,3 +47,20 @@ def test_cinematic_bonus_ignores_adjacent_punctuation() -> None:
 
     assert punctuated.task_fit == plain.task_fit
     assert punctuated.output_quality == plain.output_quality
+
+
+def test_estimate_cost_failure_scores_neutral_cost_and_warns(caplog) -> None:
+    class _UnpricedTool(_FakeVideoTool):
+        def estimate_cost(self, inputs: dict[str, object]) -> float:
+            raise RuntimeError("pricing service unavailable")
+
+    tool = _UnpricedTool()
+    with caplog.at_level(logging.WARNING, logger="lib.scoring"):
+        score = score_provider(
+            tool, {"asset_type": "video", "intent": "make it cinematic"}
+        )
+
+    # Neutral, not 0.0: an unpriced tool must not look free.
+    assert score.cost_efficiency == UNKNOWN_COST_EFFICIENCY == 0.5
+    assert "fake-video" in caplog.text
+    assert "pricing service unavailable" in caplog.text

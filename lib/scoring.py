@@ -10,8 +10,16 @@ Scores are normalized 0-1. Higher is better.
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
+import logging
 import re
 from typing import Any
+
+logger = logging.getLogger(__name__)
+
+# Cost score used when a tool cannot price the work (``estimate_cost`` raised).
+# 0.0 read as "free" and won every ranking; 1.0 would be a lie. 0.5 is neutral:
+# the unknown-cost tool neither wins nor loses on this dimension.
+UNKNOWN_COST_EFFICIENCY = 0.5
 
 
 # ---------------------------------------------------------------------------
@@ -422,14 +430,22 @@ def score_provider(tool, task_context: dict[str, Any]) -> ProviderScore:
     # Cost efficiency
     try:
         estimated_cost = tool.estimate_cost(task_context)
-    except Exception:
+    except Exception as exc:
+        # An unpriced tool must not silently look free: warn and score neutral.
+        logger.warning(
+            "estimate_cost failed for tool %s: %s — scoring cost at the neutral "
+            "%.2f instead of 0.0",
+            info.get("name", "unknown"),
+            exc,
+            UNKNOWN_COST_EFFICIENCY,
+        )
         estimated_cost = None
     cost_efficiency = (
         _compute_cost_efficiency(
             estimated_cost, task_context.get("budget_remaining_usd")
         )
         if estimated_cost is not None
-        else 0.0
+        else UNKNOWN_COST_EFFICIENCY
     )
 
     # Latency: uses measured p50 latency if available, else runtime class heuristic.
