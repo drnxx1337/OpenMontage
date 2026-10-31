@@ -11,12 +11,9 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont } from "@remotion/google-fonts/SpaceGrotesk";
+import { loadSpaceGrotesk } from "../lib/localFonts";
 
-const { fontFamily } = loadFont("normal", {
-  weights: ["400", "700"],
-  subsets: ["latin", "latin-ext"],
-});
+const { fontFamily } = loadSpaceGrotesk(["400", "700"]);
 
 type Datum = { label: string; value: number; unit?: string };
 

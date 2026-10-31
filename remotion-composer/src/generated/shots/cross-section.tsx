@@ -7,7 +7,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont } from "@remotion/google-fonts/SpaceGrotesk";
+import { loadSpaceGrotesk } from "../../lib/localFonts";
 import {
   Axis,
   Stage,
@@ -18,10 +18,7 @@ import {
 } from "../../shotkit";
 import type { Theme } from "../../shotkit";
 
-const { fontFamily } = loadFont("normal", {
-  weights: ["400", "700"],
-  subsets: ["latin", "latin-ext"],
-});
+const { fontFamily } = loadSpaceGrotesk(["400", "700"]);
 
 export type Datum = { label: string; value: number; unit?: string };
 
