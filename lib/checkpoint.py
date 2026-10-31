@@ -610,15 +610,24 @@ def get_completed_stages(
     When pipeline_type is provided, only checks stages defined in that
     pipeline's manifest and requires their recorded pipeline_type to match —
     preventing false positives from a previous pipeline's shared stages.
+
+    Checkpoints written before pipeline scoping existed carry no pipeline_type
+    (``write_checkpoint`` stores ``"unknown"`` when none is supplied). Those
+    records describe no other pipeline, so a missing, empty or ``"unknown"``
+    pipeline_type is treated as legacy unscoped data and still counts as
+    completed. A checkpoint that names a pipeline must match exactly.
     """
     stages_to_check = get_pipeline_stages(pipeline_type)
     completed = []
     for stage in stages_to_check:
         cp = read_checkpoint(pipeline_dir, project_id, stage)
+        if not cp or cp.get("status") != "completed":
+            continue
+        recorded_type = cp.get("pipeline_type")
         if (
-            cp
-            and cp.get("status") == "completed"
-            and (pipeline_type is None or cp.get("pipeline_type") == pipeline_type)
+            pipeline_type is None
+            or recorded_type == pipeline_type
+            or recorded_type in (None, "", "unknown")
         ):
             completed.append(stage)
     return completed

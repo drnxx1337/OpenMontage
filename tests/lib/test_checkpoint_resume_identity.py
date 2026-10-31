@@ -1,6 +1,11 @@
 """A pipeline switch must not reuse another pipeline's completed work."""
 
-from lib.checkpoint import get_completed_stages, get_next_stage, write_checkpoint
+from lib.checkpoint import (
+    get_completed_stages,
+    get_next_stage,
+    read_checkpoint,
+    write_checkpoint,
+)
 from tests.contracts.test_phase0_contracts import sample_artifact
 
 
@@ -37,3 +42,19 @@ def test_unscoped_legacy_resume_still_accepts_completion(tmp_path):
 
     assert get_completed_stages(tmp_path, "film") == ["research"]
     assert get_next_stage(tmp_path, "film") == "proposal"
+
+
+def test_legacy_unknown_pipeline_type_counts_under_scope(tmp_path):
+    # Pre-scoping checkpoints record pipeline_type "unknown"; they belong to no
+    # other pipeline, so a scoped resume must not re-run their stages.
+    write_checkpoint(
+        tmp_path, "film", "research", "completed",
+        {"research_brief": sample_artifact("research_brief")},
+        human_approved=True,
+    )
+
+    legacy = read_checkpoint(tmp_path, "film", "research")
+    assert legacy is not None
+    assert legacy["pipeline_type"] == "unknown"
+    assert get_completed_stages(tmp_path, "film", "framework-smoke") == ["research"]
+    assert get_next_stage(tmp_path, "film", "framework-smoke") == "script"
