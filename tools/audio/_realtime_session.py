@@ -7,7 +7,22 @@ import os
 import time
 from urllib.parse import urlparse, urlencode
 import requests
-from websockets.sync.client import connect
+
+# Realtime audio is the only consumer of websockets, and it is an optional
+# extra. Importing it at module scope made a missing package abort the import
+# of this module — and, because the tool registry imports every tool module to
+# discover it, of the whole registry. The transport is therefore resolved on
+# first connect, where a clear, actionable error can be raised instead.
+WEBSOCKETS_REQUIREMENT = 'realtime audio requires websockets>=14.0; pip install "websockets>=14.0"'
+
+
+def _connect(url, **kwargs):
+    """Open a WebSocket connection, importing the optional transport lazily."""
+    try:
+        from websockets.sync.client import connect
+    except ImportError as exc:
+        raise RuntimeError(WEBSOCKETS_REQUIREMENT) from exc
+    return connect(url, **kwargs)
 
 
 class RealtimeAudioSession:
@@ -123,7 +138,7 @@ class RealtimeAudioSession:
             r.raise_for_status()
             self.headers = {"Authorization": "Bearer " + r.json()["value"]}
         self.deadline = time.monotonic() + self.timeout
-        self.socket = connect(
+        self.socket = _connect(
             self.url,
             additional_headers=self.headers,
             open_timeout=20,
