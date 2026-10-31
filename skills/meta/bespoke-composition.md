@@ -145,7 +145,7 @@ Recurring mechanics that bite if you don't know them:
   public dir and reference via `staticFile`. Mirror the `resolveAsset` helper.
 - **GSAP-in-Remotion**: use a `paused` timeline and `.seek(frame/fps)` — never `requestAnimationFrame`
   — so frames render deterministically.
-- **Fonts (Remotion)**: `loadFont()` from `@remotion/google-fonts/<Name>` at module scope, once.
+- **Fonts (Remotion)**: `loadSpaceGrotesk(["400","700"])` (or `loadPlayfair`) from `lib/localFonts` at module scope, once — bundled latin + latin-ext faces, no network.
 - **HF data-* contract**: every timed element needs `data-start`, `data-duration`,
   `data-track-index`, AND `class="clip"` — without `clip` the framework won't manage
   visibility and your element will be onscreen the whole timeline. Root `<body>` needs
