@@ -394,7 +394,8 @@ def test_realtime_eleven_mints_secret_and_does_not_persist_it(monkeypatch):
     socket = Mock()
     socket.recv.return_value = json.dumps({"type": "session.created"})
     connect = Mock(return_value=socket)
-    monkeypatch.setattr("tools.audio._realtime_session.connect", connect)
+    # The session imports the transport lazily, so patch the import target.
+    monkeypatch.setattr("websockets.sync.client.connect", connect)
     with RealtimeAudioSession("elevenlabs", "eleven_realtime_v1_mini") as session:
         assert (
             connect.call_args.kwargs["additional_headers"]["Authorization"]
@@ -420,7 +421,7 @@ def test_mai_realtime_requires_session_ack_and_raw_pcm(monkeypatch):
         json.dumps({"type": "session.updated"}),
     ]
     monkeypatch.setattr(
-        "tools.audio._realtime_session.connect", Mock(return_value=socket)
+        "websockets.sync.client.connect", Mock(return_value=socket)
     )
     with RealtimeAudioSession("microsoft_mai", "MAI-Transcribe-2-Streaming") as session:
         session.append_audio(b"\0\0" * 10)
